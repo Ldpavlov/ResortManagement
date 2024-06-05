@@ -31,4 +31,10 @@ public class SkiSchoolTest {
         skiSchool.rentEquipment("ski");
     }
 
+    @Test
+    public void testCalculateIncomeFromRentals() {
+        double expected = (100 * 30) * 35;
+        assertEquals(expected, skiSchool.calculateIncomeFromRent(), 0.001);
+    }
+
 }

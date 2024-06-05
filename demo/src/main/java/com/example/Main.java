@@ -3,6 +3,8 @@ package com.example;
 import java.util.*;
 
 import com.example.common.NoSkisAvailableException;
+import com.example.data.DataReader;
+import com.example.data.DataReaderInterface;
 import com.example.data.DataWriter;
 import com.example.data.DataWriterInterface;
 import com.example.manager.SkiSchoolManager;
@@ -11,12 +13,15 @@ import com.example.model.Instructor;
 import com.example.model.Resort;
 import com.example.model.SkiSchool;
 
+import java.io.IOException;
 import java.time.*;
 
 public class Main {
-        public static void main(String[] args) throws NoSkisAvailableException {
+        public static void main(String[] args) throws NoSkisAvailableException, IOException {
+
                 LocalDate today = LocalDate.now();
                 DataWriterInterface dataWriter = new DataWriter("resort_data.txt");
+                DataReaderInterface dataReader = new DataReader("resort_data.txt");
 
                 // Create a new resort instance
                 Resort aspenResort = new Resort("Aspen", 111, 645, Country.USA, 31000, 5000000, 1.0);
@@ -131,11 +136,6 @@ public class Main {
                                 sSchool.handleEquipmentRental("snowboard");
                                 sSchool.handleEquipmentRental("helmet");
 
-                                // dataWriter.writeToFile("\nTotal skis rented on " + today + ": " +
-                                // sSchool.totalSkiPairsRented());
-                                // dataWriter.writeToFile("Total snowboards rented on " + today + ": " +
-                                // sSchool.totalSnowboardsRented());
-
                                 dataWriter.writeToFile(String.format(
                                                 "\nRental Summary for %s:\n- Total skis rented: %d\n- Total snowboards rented: %d\nAnnual income from rentals: $%.2f",
                                                 today, sSchool.totalSkiPairsRented(), sSchool.totalSnowboardsRented(),
@@ -160,5 +160,7 @@ public class Main {
                         dataWriter.writeToFile(
                                         "\n---------------------------------------------------------------------------------------\n");
                 }
+
+                // dataReader.readFile("resort_data.txt");
         }
 }

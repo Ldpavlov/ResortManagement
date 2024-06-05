@@ -50,7 +50,6 @@ public class SkiSchoolManager {
     public double getInstructorsBonusSalary(SkiSchool skiSchool) {
         List<Double> totalHoursWorkedList = skiSchool.getTotalHoursWorkedByInstructor();
         double bonusSalary = 0;
-        System.out.println(totalHoursWorkedList);
         for (int i = 0; i < totalHoursWorkedList.size(); i++) {
             double bonusRate = skiSchool.getBonusRate();
             double hours = totalHoursWorkedList.get(i);

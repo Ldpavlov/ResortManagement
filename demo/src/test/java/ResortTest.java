@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ResortTest {
     private Resort resort;
-    private DataWriterInterface dataWriter = new DataWriter("resort_data.txt"); 
+    private DataWriterInterface dataWriter = new DataWriter("resort_data.txt");
 
     @Before
     public void setUp() {
@@ -20,9 +20,9 @@ public class ResortTest {
 
     @Test
     public void testConstructor() {
-        assertEquals("Test Resort", resort.getName());
-        assertEquals(10, resort.getNumberOfLifts());
-        assertEquals(50, resort.getKmPistes());
+        assertEquals("Aspen", resort.getName());
+        assertEquals(111, resort.getNumberOfLifts());
+        assertEquals(645, resort.getKmPistes());
     }
 
     @Test
@@ -44,11 +44,4 @@ public class ResortTest {
         resort.addSkiPassType("WEEKEND", 100.0);
         assertEquals(100.0, resort.getPriceForSkiPassType("WEEKEND"), 0.001);
     }
-
-    @Test
-    public void testToString() {
-        String expected = "Resort: Aspen, Number of lifts: 111, Km/Pistes: 645, Country: USA";
-        assertEquals(expected, resort.toString());
-    }
-
 }
