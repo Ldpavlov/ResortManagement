@@ -36,5 +36,4 @@ public class SkiSchoolTest {
         double expected = (100 * 30) * 35;
         assertEquals(expected, skiSchool.calculateIncomeFromRent(), 0.001);
     }
-
 }
