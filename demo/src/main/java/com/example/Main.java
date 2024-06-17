@@ -52,20 +52,17 @@ public class Main {
                 aspenResort.addSkiSchool(skiSchool);
                 aspenResort.addSkiSchool(skiSchool2);
 
-                // Create second ski resort instance
                 Resort banskoResort = new Resort("Bansko", 20, 100, Country.BULGARIA, 15000, 1000000, 2.0);
 
-                // Adding ski pass types/prices Bansko
                 banskoResort.addSkiPassType("DAY", 75.0);
                 banskoResort.addSkiPassType("WEEK", 500.0);
                 banskoResort.addSkiPassType("SEASONAL", 1500.0);
 
-                // Record ski pass sales Bansko
                 banskoResort.recordSkiPassSale("DAY", 10000);
                 banskoResort.recordSkiPassSale("WEEK", 5000);
                 banskoResort.recordSkiPassSale("SEASONAL", 500);
 
-                // Create new ski schools and instructors
+                // Create ski schools and instructors
                 SkiSchool snowPeaks = new SkiSchool("Snow Peaks", 3000, 2.0, 20, 2, 5, 20, 200, dataWriter);
                 Instructor gosho = new Instructor("Gosho", true, 150);
                 Instructor pesho = new Instructor("Pesho", false, 220);
@@ -81,7 +78,6 @@ public class Main {
                 banskoResort.addSkiSchool(snowPeaks);
                 banskoResort.addSkiSchool(pirinSkiClub);
 
-                // Add all resorts to a list
                 List<Resort> allResorts = new ArrayList<>();
                 allResorts.add(aspenResort);
                 allResorts.add(banskoResort);

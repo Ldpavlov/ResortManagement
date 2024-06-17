@@ -93,7 +93,6 @@ public class SkiSchool implements BonusCalculator {
             totalSnowsRented++;
             return --availableSnows;
         } else {
-            dataWriter.writeToFile("Unknown equipment type: " + equipmentType);
             throw new IllegalArgumentException("Unknown equipment type: " + equipmentType);
         }
     }
@@ -107,8 +106,8 @@ public class SkiSchool implements BonusCalculator {
             System.out.println(e.getMessage());
             dataWriter.writeToFile(e.getMessage());
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid equipment type: " + equipmentType);
-            dataWriter.writeToFile("Invalid equipment type: " + equipmentType);
+            System.out.println("Unknown equipment type: " + equipmentType);
+            dataWriter.writeToFile("Unknown equipment type: " + equipmentType);
         }
     }
 
